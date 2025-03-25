@@ -1,5 +1,8 @@
+
 * {
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #6c5b7b #120a1f;
 }
 
 html {
@@ -14,3 +17,28 @@ body {
   padding: 0;
   height: 100%;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #120a1f; /* Tom escuro suave */
+  border-radius: 10px;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #6c5b7b; /* Roxo acinzentado suave */
+  border-radius: 10px;
+  border: 2px solid #120a1f;
+  transition: background 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #a084ca; /* Lilás sutil para melhor UX */
+}
+
+

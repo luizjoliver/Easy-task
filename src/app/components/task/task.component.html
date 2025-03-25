@@ -1,3 +1,10 @@
-<div>
-  <h2>{{name}}</h2>
-</div>
+<article>
+    <h2>{{task.title}}</h2>
+     <time datetime="">{{task.dueDate}}</time>
+     <p>{{task.summary}}</p>
+     <p class="actions">
+      <button (click)="onCompleteTask()">Completar</button>
+     </p>
+
+ </article>
+

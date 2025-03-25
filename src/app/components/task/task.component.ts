@@ -1,21 +1,22 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import  { type TypeTask  } from './task.model';
+import { Component, inject, Input } from '@angular/core';
+import { type TypeTask } from './task.model';
 import { CardComponent } from "../../shared/card/card.component";
-
+import { DatePipe } from '@angular/common';
+import { TasksService } from '../tasks/tasks.service';
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent,DatePipe ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
   @Input() selectedUserId!:string;
   @Input({required:true}) task!:TypeTask
-  @Output() complete = new EventEmitter<string>();
 
+  private tasksService = inject(TasksService)
   onCompleteTask(){
-    this.complete.emit(this.task.id)
+    this.tasksService.removeTask(this.task.id)
   }
 
 

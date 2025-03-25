@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MOCK_USERS } from '../../constants/users';
 import { type TypeUser } from './user.mode';
+import { CardComponent } from "../../shared/card/card.component";
 
 const randomIndex = Math.floor(Math.random() * MOCK_USERS.length);
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
